@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <!-- ============================================
+         DOCUMENTAZIONE - index.html
+         Gioco Genio Steam Who - Akinator STEAM
+         Autori: Poli Alessio, Redi Giacomo, Renesto Francesco
+         
+         Descrizione: Questa è la pagina principale del gioco.
+         Il genio pone domande sì/no per indovinare il personaggio 
+         STEAM a cui l'utente sta pensando.
+         
+         Struttura:
+         - Meta tag per charset, viewport e SEO
+         - Preload di immagini critiche (performance)
+         - Caricamento deferito degli script (questions.js, characters.js, script.js)
+         - Layout: contenitore glassmorphism, nuvola, pulsanti, genio, footer
+         - Accessibilità: attributi aria, testo alternativo, sr-only
+         ============================================ -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <meta name="description" content="Genio Steam Who - Il genio che indovina il personaggio a cui stai pensando">
+    <meta name="author" content="Poli Alessio, Redi Giacomo, Renesto Francesco">
+    
+    <link href="CSS/style.css" rel="stylesheet" type="text/css">
+    
+    <title>Genio Steam Who - Il genio delle domande</title>
+    
+    <link rel="preload" href="Immagini/genio.png" as="image">
+    <link rel="preload" href="Immagini/nuvolapensiero.png" as="image">
+    
+    <script src="Info/domande.js" defer></script>    
+    <script src="Info/personaggi.js" defer></script>  
+    <script src="JavaScript/script.js" defer></script>        
+</head>
+<body>
+    <div id="parent-container">
+        <header id="header">
+            <h1>Genio - Steam Who</h1>
+            <p class="sr-only">Gioco in cui il genio indovina il personaggio a cui stai pensando</p>
+        </header>
+
+        <main>
+            <div id="game-area">
+                <div class="cloud-container">
+                    <img class="immagine-nuvola" src="Immagini/nuvolapensiero.png" alt="Nuvola di pensiero del genio">
+                    <div id="question-text" class="question-inside-cloud">
+                        Pensa a un personaggio...
+                    </div>
+                </div>
+
+                <div class="buttons-wrapper">
+                    <button id="yes-button" class="answer-btn btn-yes" aria-label="Rispondi Sì">
+                        <span class="btn-text">✅ Sì</span>
+                    </button>
+                    <button id="no-button" class="answer-btn btn-no" aria-label="Rispondi No">
+                        <span class="btn-text">❌ No</span>
+                    </button>
+                    <button id="reset-button" class="reset-btn" style="display: none;" aria-label="Ricominciare il gioco">
+                        <span class="btn-text">🔄 Gioca di nuovo</span>
+                    </button>
+                </div>
+
+                <figure id="genie-container">
+                    <img id="genie-image" 
+                         src="Immagini/genio.png" 
+                         alt="Genio di Akinator" 
+                         loading="eager">
+                    <figcaption class="sr-only">Il genio che ti interroga</figcaption>
+                </figure>
+            </div>
+        </main>
+
+        <footer id="footer">
+            <p>Progetto realizzato dagli studenti: Poli Alessio - Redi Giacomo - Renesto Francesco.</p>
+            <nav aria-label="Link di documentazione">
+                <ul class="footer-links">
+                    <li><a href="Personaggi/Personaggi.pdf" target="_blank" rel="noopener noreferrer">Lista dei personaggi</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+</body>
+</html>
