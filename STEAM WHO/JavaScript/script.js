@@ -18,7 +18,6 @@
  * ============================================
  */
 
-// Debug utility (non utilizzata in produzione, stampa domande)
 function _debug_printQuestions(data) {
     data.categories.sort((a, b) => a.priority - b.priority);
 

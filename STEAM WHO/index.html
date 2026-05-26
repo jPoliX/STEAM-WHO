@@ -19,66 +19,49 @@
          ============================================ -->
 
     <meta charset="utf-8">
-    <!-- Viewport per garantire responsive design su dispositivi mobili -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
-    <!-- Meta description per SEO e accessibilità -->
     <meta name="description" content="Genio Steam Who - Il genio che indovina il personaggio a cui stai pensando">
     <meta name="author" content="Poli Alessio, Redi Giacomo, Renesto Francesco">
     
-    <!-- Collegamento al foglio di stile principale (effetti glass, neon, animazioni) -->
     <link href="CSS/style.css" rel="stylesheet" type="text/css">
     
     <title>Genio Steam Who - Il genio delle domande</title>
     
-    <!-- Preload delle immagini chiave per migliorare le performance di caricamento -->
     <link rel="preload" href="Immagini/genio.png" as="image">
     <link rel="preload" href="Immagini/nuvolapensiero.png" as="image">
     
-    <!-- Script caricati in modo non bloccante (defer) per non rallentare il rendering -->
-    <script src="Info/domande.js" defer></script>    <!-- Domande categorizzate -->
-    <script src="Info/personaggi.js" defer></script>  <!-- Database dei personaggi -->
-    <script src="JavaScript/script.js" defer></script>        <!-- Logica principale del gioco -->
+    <script src="Info/domande.js" defer></script>    
+    <script src="Info/personaggi.js" defer></script>  
+    <script src="JavaScript/script.js" defer></script>        
 </head>
 <body>
-    <!-- Contenitore principale con effetto vetro (glassmorphism) -->
     <div id="parent-container">
-        <!-- Intestazione: titolo del gioco -->
         <header id="header">
             <h1>✨ Genio - Steam Who ✨</h1>
-            <!-- Classe sr-only per screen reader (testo nascosto visivamente ma leggibile) -->
             <p class="sr-only">Gioco in cui il genio indovina il personaggio a cui stai pensando</p>
         </header>
 
-        <!-- Area principale di gioco -->
         <main>
             <div id="game-area">
-                <!-- Nuvola pensiero: contiene l'immagine e il testo della domanda sovrapposto -->
                 <div class="cloud-container">
-                    <!-- Immagine nuvola (SVG o PNG) con ombra e animazione -->
                     <img class="immagine-nuvola" src="Immagini/nuvolapensiero.png" alt="Nuvola di pensiero del genio">
-                    <!-- Testo della domanda: posizionato assolutamente dentro l'immagine -->
                     <div id="question-text" class="question-inside-cloud">
                         Pensa a un personaggio...
                     </div>
                 </div>
 
-                <!-- Wrapper dei pulsanti di risposta (Sì, No, Reset) -->
                 <div class="buttons-wrapper">
-                    <!-- Pulsante Sì -->
                     <button id="yes-button" class="answer-btn btn-yes" aria-label="Rispondi Sì">
                         <span class="btn-text">✅ Sì</span>
                     </button>
-                    <!-- Pulsante No -->
                     <button id="no-button" class="answer-btn btn-no" aria-label="Rispondi No">
                         <span class="btn-text">❌ No</span>
                     </button>
-                    <!-- Pulsante Reset (inizialmente nascosto, appare alla fine della partita) -->
                     <button id="reset-button" class="reset-btn" style="display: none;" aria-label="Ricominciare il gioco">
                         <span class="btn-text">🔄 Gioca di nuovo</span>
                     </button>
                 </div>
 
-                <!-- Contenitore dell'immagine del genio (a sinistra, più grande) -->
                 <figure id="genie-container">
                     <div class="magic-lamp"></div>
                     <img id="genie-image" 
@@ -91,10 +74,8 @@
             </div>
         </main>
 
-        <!-- Footer con crediti e link alla documentazione -->
         <footer id="footer">
             <p>Progetto realizzato dagli studenti: Poli Alessio - Redi Giacomo - Renesto Francesco.</p>
-            <!-- Navigazione accessibile con link a file PDF -->
             <nav aria-label="Link di documentazione">
                 <ul class="footer-links">
                     <li><a href="Personaggi/Personaggi.pdf" target="_blank" rel="noopener noreferrer">📜 Lista dei personaggi</a></li>
