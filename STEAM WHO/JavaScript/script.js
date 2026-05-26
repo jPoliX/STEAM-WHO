@@ -317,7 +317,7 @@ function updateListenerSafe(element, event, oldCallback, newCallback) {
  */
 function akinator() {
     categoryIndex = 0;
-    remainingCharacters = characters;              
+    remainingCharacters = characters;              // characters viene dal file characters.js
     remainingQuestions = questions.categories[categoryIndex].questions;
     genieImage.src = "Immagini/genio.png"
 
@@ -348,4 +348,5 @@ window.onload = function() {
 
     akinator();
 
+    // window.open('docs/Personaggi.pdf', '_blank');
 }
